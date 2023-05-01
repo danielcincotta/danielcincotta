@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+/*font-family: 'Oswald', sans-serif;*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: smash;
+    src: url(../fonts/smash.ttf);
+}
+html{
+    min-width: 100%;
+}
+body{
+    min-width: 80%;
+}
+
+p , h2 , label {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+
+h2{
+    text-align: center;
+}
+.logo { 
+    font-family: smash;
+    text-transform: uppercase;
+    color:rgb(253, 143, 0);
+    text-align: center;
+    font-size: 26px;
+    padding: 10px;
+}
+.container {
+    gap: 10px;
+    display: grid;
+    grid-template: 
+        "header"
+        "nav" 
+        "main" 
+        "sidebar" 
+        "footer" ;
+    background-image: url(../img/fondo.jpg);
+}
+.header {
+    grid-area: header;
+    background-color: rgba(255, 0, 0, 0.288);
+    border-radius: 10px;
+}
+.nav{
+    grid-area: nav;
+    border-radius: 10px;
+}
+.nav-link{
+    color: red !important;
+}
+
+.main {
+    grid-area: main;
+    width: 100%;
+}
+.foto {
+    height: 230px;
+    width: auto;
+    padding: 10px;
+    align-items: center;
+}
+
+section{
+    display: grid;
+    grid-template-columns:repeat(1, 1fr);
+    height: auto;
+    justify-items: center;
+}
+.sidebar {
+    grid-area: sidebar;
+    background-color: rgba(255, 0, 0, 0.288);
+    border-radius: 10px;
+    min-height: 500px;
+    padding: 10px;
+}
+
+.footer {
+    grid-area: footer;
+    height: auto;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.288);
+    border-radius: 10px;
+}
+
+.footer a {
+    color: black;
+    padding: 5px;
+    letter-spacing: 10px;
+    font-size: 30px;
+    text-decoration: none;
+}
+.footer a:hover {
+    color: red;
+}
+
