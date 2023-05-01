@@ -132,3 +132,40 @@ section{
     background-image: url(../img/galeria/img5.jpg);  
 }
 
+form {
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    text-align: center;     
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+input, textarea , button{
+    padding: 2px 2px ;
+    border-radius: 25px;
+    margin-bottom: 5px;
+    background-color: rgba(255, 0, 0, 0.288);
+    border: 2px solid #f0faf1;
+    color: #ff0000;
+    outline: none;
+}
+
+.btn {
+    font-size: 16px;
+    color: #ffffff;
+    border: 0;
+    border-radius: 25px;
+    background-color: rgba(255, 0, 0, 0.288);
+    box-shadow: 0 0 20px rgb(255, 0, 0);
+    cursor: pointer;
+}
+
+.btn:hover { 
+    background-color: #ff0000;
+    border: 2px solid #f0faf1;
+}
