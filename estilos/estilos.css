@@ -11,9 +11,11 @@
     font-family: smash;
     src: url(../fonts/smash.ttf);
 }
+
 html{
     min-width: 100%;
 }
+
 body{
     min-width: 80%;
 }
@@ -26,14 +28,16 @@ p , h2 , label {
 h2{
     text-align: center;
 }
+
 .logo { 
+    color:rgb(253, 143, 0);
     font-family: smash;
     text-transform: uppercase;
-    color:rgb(253, 143, 0);
     text-align: center;
     font-size: 26px;
     padding: 10px;
 }
+
 .container {
     gap: 10px;
     display: grid;
@@ -44,24 +48,34 @@ h2{
         "sidebar" 
         "footer" ;
     background-image: url(../img/fondo.jpg);
+    background-size: cover;
+    background-position: center;
 }
+
 .header {
     grid-area: header;
     background-color: rgba(255, 0, 0, 0.288);
     border-radius: 10px;
 }
+
 .nav{
     grid-area: nav;
     border-radius: 10px;
 }
+
 .nav-link{
     color: red !important;
+}
+
+.nav-link:hover {
+    color:rgb(253, 143, 0) !important;
 }
 
 .main {
     grid-area: main;
     width: 100%;
 }
+
 .foto {
     height: 230px;
     width: auto;
@@ -115,21 +129,30 @@ section{
     background-size: cover;
     background-position: center;
     border-radius: 10px;
+    
+}
+.item:hover{
+    filter: none;
 }
 .img1{
     background-image: url(../img/galeria/img1.jpg);
+    filter: grayscale();
 }
 .img2{
     background-image: url(../img/galeria/img2.jpg);
+    filter: grayscale();
 }
 .img3{
     background-image: url(../img/galeria/img3.jpg);
+    filter: grayscale();
 }
 .img4{
-    background-image: url(../img/galeria/img4.jpg);  
+    background-image: url(../img/galeria/img4.jpg);
+    filter: grayscale(); 
 }
 .img5{
-    background-image: url(../img/galeria/img5.jpg);  
+    background-image: url(../img/galeria/img5.jpg);
+    filter: grayscale();  
 }
 
 form {
