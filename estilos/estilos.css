@@ -215,7 +215,7 @@ input, textarea , button{
 @media only screen and ( min-width: 480px) {
     .galeria{
         grid-template-columns: 1fr 1fr ;
-        grid-template-rows: repeat(2, 100px);
+        grid-template-rows: repeat(3, 100px);
     } 
     section iframe{
         width: 450px;
