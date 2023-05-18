@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 
-/*font-family: 'Oswald', sans-serif;*/
+    /*font-family: 'Oswald', sans-serif;*/
 * {
     box-sizing: border-box;
     margin: 0;
@@ -42,16 +42,17 @@ $color_fondo: rgba(255, 0, 0, 0.288);
 $color_logo: rgb(253, 143, 0);
 $fuente_principal : 'Oswald', sans-serif;
 
-
+    /*la pagina esta echa desde una resolucion 320px mobile pasando por los distinotos breakpoint 480px tablet y de 1000px desktop*/
 body{
     min-width: 80%;
+    height: auto;
 }
 
 p , h2 , label {
     color: $color_font;
-    font-family: $fuente_principal
+    font-family: $fuente_principal;
 }
-
+    /*contenedor de toda la pagina*/
 .container {
     gap: 10px;
     display: grid;
@@ -63,9 +64,8 @@ p , h2 , label {
         "footer" ;
     background-image: url(../img/fondo.jpg);
     background-size: cover;
-    background-position: center; 
+    background-position: center;
 }
-
 .header {
     grid-area: header;
     background-color: $color_fondo;
@@ -79,7 +79,7 @@ p , h2 , label {
         padding: 10px;
     } 
 }
-
+    /*barra de navegacion de bootsrap*/
 .nav{
     grid-area: nav;
     @include bordes(10px);
@@ -95,6 +95,7 @@ p , h2 , label {
     grid-area: main;
     width: 100%;
     height: auto;
+    margin-top: 30px;
     h2{
         text-align: center;
     }
@@ -122,7 +123,7 @@ p , h2 , label {
     }
     @include tablet{
         iframe{
-            width: 750px;
+            width: 450px;
             height: 300px;
         }
     }
@@ -132,8 +133,9 @@ p , h2 , label {
     grid-area: sidebar;
     background-color: $color_fondo;
     @include bordes(10px);
-    min-height: 500px;
-    padding: 10px; 
+    min-height: auto;
+    padding: 10px;
+    margin-top: 30px;
 }
 
 @include tablet{
@@ -146,9 +148,9 @@ p , h2 , label {
     grid-area: footer;
     height: auto;
     text-align: center;
+    margin-bottom: auto;
     background-color: $color_fondo;
     @include bordes(10px);
-    
     a {
         color: black;
         padding: 5px;
@@ -166,7 +168,7 @@ p , h2 , label {
         @include rotado(360deg); 
     }
 }
-
+    /*galeria se encuentra en la pargina nis trabajos*/
 .galeria{
     display: grid;
     grid-template-columns:repeat(1, 1fr);
@@ -176,7 +178,7 @@ p , h2 , label {
         border: 3px solid $color_fondo;
         background-size: cover;
         background-position: center;
-        transition: 100ms;
+        transition: 1000ms;
     }  
     .item:hover {  
         @include escalado(1.2);
@@ -184,7 +186,6 @@ p , h2 , label {
     }
     .img1{
         background-image: url(../img/galeria/img1.jpg);
-        
     }
     .img2{
         background-image: url(../img/galeria/img2.jpg);
@@ -203,11 +204,12 @@ p , h2 , label {
             grid-template-rows: repeat(3, 100px);
         }
 }
-
+    /*formulario se encuentra en la pagina contacto*/
 form {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     @include bordes(20px);
-    text-align: center;     
+    text-align: center;
+    margin-top: 30px;
     .input-group {
         display: flex;
         flex-direction: column;
@@ -236,7 +238,7 @@ form {
         border: 2px solid #f0faf1;
     }
 }
-
+    /*resposive a 1000px desktop*/
 @include desktop{
     .container{
         grid-template-columns: 1fr 1fr;
@@ -264,20 +266,24 @@ form {
             width: 550px;
             height: 500px;
         }
+        div{
+            padding-top: 30px;
+        }
+    }
+    .sidebar{
+        grid-column: 2/3;
+        grid-row: 3/4;
+        height: 700px;
     }
     .footer{
         grid-column: 1/3;
         grid-row: 4/5;
     }       
-    .sidebar{
-        grid-column: 2/3;
-        grid-row: 3/4;
-    
-    }
     aside img{
-        margin-top: 90px;
+        margin-top: 200px;
     }
     .galeria{
+        height: 700px;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(5, 200px ); 
         .img1{
