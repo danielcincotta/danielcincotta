@@ -1,6 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 
-    /*font-family: 'Oswald', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Permanent+Marker&display=swap');
+
+/*
+font-family: 'Oswald', sans-serif;
+font-family: 'Permanent Marker', cursive;
+*/
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,6 +17,7 @@
     src: url(../fonts/smash.ttf);
 }
 
+/*aplicando mixin*/
 @mixin tablet{
     @media only screen and (min-width: 480px) {
         @content;
@@ -36,13 +42,19 @@
     transform: rotate($rotar);
 }
 
-$color_font : white;
+@mixin fSize ($size){
+    font-size: $size;
+}
+
+/*uso de variables */
+$color_font : rgb(253, 143, 0);
 $color_hover: red;
 $color_fondo: rgba(255, 0, 0, 0.288);
 $color_logo: rgb(253, 143, 0);
 $fuente_principal : 'Oswald', sans-serif;
+$fuente_secundaria : 'Permanent Marker', cursive;
 
-    /*la pagina esta echa desde una resolucion 320px mobile pasando por los distinotos breakpoint 480px tablet y de 1000px desktop*/
+/*la pagina esta echa desde una resolucion 320px mobile pasando por los distinotos breakpoint 480px tablet y de 1200px desktop*/
 body{
     min-width: 80%;
     height: auto;
@@ -52,7 +64,12 @@ p , h2 , label {
     color: $color_font;
     font-family: $fuente_principal;
 }
-    /*contenedor de toda la pagina*/
+
+h2{
+    text-align: center;
+}
+
+/*contenedor de toda la pagina*/
 .container {
     gap: 10px;
     display: grid;
@@ -66,6 +83,7 @@ p , h2 , label {
     background-size: cover;
     background-position: center;
 }
+
 .header {
     grid-area: header;
     background-color: $color_fondo;
@@ -79,7 +97,8 @@ p , h2 , label {
         padding: 10px;
     } 
 }
-    /*barra de navegacion de bootsrap*/
+
+/*barra de navegacion de bootsrap*/
 .nav{
     grid-area: nav;
     @include bordes(10px);
@@ -89,6 +108,11 @@ p , h2 , label {
     .nav-link:hover {
         color:$color_logo !important;
     }   
+}
+
+.fondo{
+    background-color: rgba(2, 2, 2, 0.384);
+@include bordes(10px);
 }
 
 .main {
@@ -111,15 +135,18 @@ p , h2 , label {
         padding: 10px;
         align-items: center;
     }
+    p {
+        @include fSize(16px);
+        text-shadow: #000 2px 2px 10px;
+        padding: 10px;
+    }
     .verde{
         @include bordes(10px);
         background-color: rgba(0, 255, 13, 0.288);
-        padding: 10px;
     }
     .rojo{
         @include bordes(10px);
         background-color: $color_fondo;
-        padding: 10px;
     }
     @include tablet{
         iframe{
@@ -136,6 +163,16 @@ p , h2 , label {
     min-height: auto;
     padding: 10px;
     margin-top: 30px;
+    p{
+        @include fSize(15px);
+        font-family: $fuente_secundaria;
+        color:white;
+        padding: 10px;
+    }
+    h2{
+        color: white;
+        font-family: $fuente_secundaria;
+    }
 }
 
 @include tablet{
@@ -158,17 +195,27 @@ p , h2 , label {
         font-size: 30px;
         text-decoration: none;    
     }
-    a:hover {
-        color: $color_hover; 
+    .fa-facebook:hover{
+        color: #4267B2;
     }
+    .fa-instagram:hover{
+        color: #FCAF45;
+    }
+    .fa-whatsapp:hover{
+        color: #25D366;
+    }    
     i{
         transition: 1s;
     }
     i:hover{
         @include rotado(360deg); 
     }
+    p{
+        @include fSize(18px);
+    }
 }
-    /*galeria se encuentra en la pargina nis trabajos*/
+
+/*galeria se encuentra en la pargina nis trabajos*/
 .galeria{
     display: grid;
     grid-template-columns:repeat(1, 1fr);
@@ -204,7 +251,8 @@ p , h2 , label {
             grid-template-rows: repeat(3, 100px);
         }
 }
-    /*formulario se encuentra en la pagina contacto*/
+
+/*formulario se encuentra en la pagina contacto*/
 form {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     @include bordes(20px);
@@ -225,7 +273,7 @@ form {
         outline: none;
     }
     .btn {
-        font-size: 16px;
+        font-size: 18px;
         color: #ffffff;
         border: 0;
         @include bordes(25px);
@@ -237,8 +285,12 @@ form {
         background-color: $color_hover;
         border: 2px solid #f0faf1;
     }
+    label{
+        @include fSize(20px)
+    }
 }
-    /*resposive a 1000px desktop*/
+
+/*resposive a 1200px desktop*/
 @include desktop{
     .container{
         grid-template-columns: 1fr 1fr;
@@ -269,11 +321,17 @@ form {
         div{
             padding-top: 30px;
         }
+        p{
+            @include fSize(18px);
+        }
     }
     .sidebar{
         grid-column: 2/3;
         grid-row: 3/4;
         height: 700px;
+        p{
+            @include fSize(18px);
+        }
     }
     .footer{
         grid-column: 1/3;
